@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>二维码扫描</title>
+
+     <!-- 加载phonegap -->  
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>  
+    <!-- 加载jquery -->  
+    <script type="text/javascript" charset="utf-8" src="jquery.mobile/jquery-1.6.4.min"></script>  
+    <!-- 加载jquerymobile -->  
+    <script type="text/javascript" charset="utf-8" src="jquery.mobile/jquery.mobile-1.0.1.js"></script>  
+    <!-- 加载自定义插件 -->  
+    <script type="text/javascript" charset="utf-8" src="barcodescanner.js"></script>
+    <script type="text/javascript" charset="utf-8">  
+         
+     $(function(){   
+        $("#btnbarcode").click(function(){   
+        	alert("hello");
+                    window.plugins.barcodeScanner.scan( 
+                            BarcodeScanner.Type.QR_CODE, 
+                            function(result) {
+                                $("#barcodediv").html(""+result);
+                            }, 
+                            function(error) {
+                                $("#barcodediv").html("扫描失败："+result);
+                                    }, 
+                                    {
+                                        installTitle: "安装提示",
+                                        installMessage:"是否安装开源免费的ZXing二维码扫描器",
+                                        yesString:"确定",
+                                        noString:"取消"
+                                    }
+                );
+
+        });   
+     });   
+</script>     
+  
+ 
+  </head>
+  <body >
+    <h2>二维码扫描</h2>
+
+        <p>二维码信息：</p>
+        <div id="barcodediv"></div>
+        <input type="button" id="btnbarcode" value="扫描" />
+  </body>
+</html>

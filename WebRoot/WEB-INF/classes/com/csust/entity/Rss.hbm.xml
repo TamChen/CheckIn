@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.csust.entity">
+  <class name="com.csust.entity.Rss" table="rss" catalog="checkin">
+    <id name="id" column="id" type="java.lang.Integer">
+      <generator class="identity">
+      </generator>
+    </id>
+    <property name="rssid" column="rssid" type="java.lang.Integer"></property>
+    <property name="rssname" column="rssname" type="java.lang.String"></property>
+      <property name="rssurl" column="rssurl" type="java.lang.String"></property>
+   	  </class>
+</hibernate-mapping>

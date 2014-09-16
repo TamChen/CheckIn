@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <!-- 这个bean主要是为了得到ApplicationContext 所以它不需要其它属性-->
+    <bean class="cn.com.util.ApplicationUtil"></bean>
+	    <!-- 登录Action -->
+	<bean id="manageAction" class="com.csust.action.ManageAction" singleton="false">
+	   <property name="userService" ref="userService" />
+	</bean>
+	<bean id="chartAction" class="com.csust.action.ChartAction" singleton="false">
+	   <property name="chartService" ref="chartService" />
+	   <property name="userService" ref="userService" />
+	 	 <property name="dataService" ref="dataService" /> 
+	</bean>
+	<bean id="labProAction" class="com.csust.action.LabProAction" singleton="false">
+	   <property name="chartService" ref="chartService" />
+	   <property name="userService" ref="userService" />
+	   <property name="dataService" ref="dataService" /> 
+	</bean>
+	<bean id="exportReportAction" class="com.csust.action.ExportReportAction" singleton="false">
+	  <property name="chartService" ref="chartService" />
+	   <property name="userService" ref="userService" />
+	   <property name="dataService" ref="dataService" /> 
+	</bean>
+	
+	
+	<!-- 客户端 -->
+	
+	<bean id="personAction" class="com.csust.action.CpersonAction" singleton="false">
+	  <property name="clientService" ref="clientService" />
+	</bean>
+	<bean id="articleAction" class="com.csust.action.CArticleAction" singleton="false">
+	  <property name="clientService" ref="clientService" />
+	</bean>
+	
+</beans>
+	
+

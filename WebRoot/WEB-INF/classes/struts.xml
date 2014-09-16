@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+	     	 <action name="manageLogin" class="manageAction" method="manageLogin">
+     	   <result name="success" type="redirect">index.jsp</result>
+     	   <result name="error" type="redirect">login.jsp</result>
+     	   <result name="login" type="redirect">login.jsp</result>
+     	</action>
+     	
+     	<action name="exit" class="manageAction" method="exit">
+     	   <result name="success" type="redirect">login.jsp</result>
+     	</action>
+    </package>
+   <package name="hello" namespace="/" extends="struts-default">  	
+     	<action name="login" class="manageAction" method="login">
+		   <result name="success" type="redirect">client/index.jsp</result>
+		   <result name="error" type="redirect">client/login.jsp</result>
+		   <result name="login" type="redirect">client/login.jsp</result>
+     	</action>
+     	<action name="article" class="articleAction" method="getArticle">
+		   <result name="success" type="redirect">client/article.jsp</result>
+     	</action>
+       	<action name="personalAction" class="personAction" method="allinfo">
+		    <result name="success" type="redirect">client/person.jsp</result>
+        </action>
+     
+     </package>
+     <package name="jsontest" extends="json-default">
+ 
+     <!-- 个人信息页面 -->
+		<action name="getPersonDataAction" class="chartAction" method="getPersonData">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="searchPersonDataAction" class="chartAction" method="searchData">
+			<result name="success" type="redirect">
+			/personal/personal.jsp
+			</result>
+		</action>
+		<action name="getPieDataAction" class="chartAction" method="getPieChart">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="getPlineDataAction" class="chartAction" method="getPLineData">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="getRandomAction" class="chartAction" method="getRandomData">
+			<result name="success" type="redirect">
+			/index.jsp
+			</result>
+		</action>
+		
+		<action name="getALineDataAction" class="chartAction" method="getALineData">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="getAllDataAction" class="chartAction" method="getAllData">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		
+		<action name="exportAction" class="exportReportAction" method="downloadExcel">
+		</action>
+		
+		<action name="downloadAction" class="exportReportAction" method="download">
+			<!--返回图片数据流给前台-->
+     		<!-- result的Type必须为stream -->
+			<result name="success" type="stream">				
+				<param name="contentType">application/vnd.ms-excel</param>
+				<!-- 下载的InputStream流，Struts2自己动对应Action中的getDownloadFile方法，该方法必须返回InputStream类型 -->
+				<param name="inputName">targetFile</param>
+				<param name="bufferSize">4096</param>
+				<!-- 下载对话框所弹出的文件名动态显示实际文件名 -->
+				<param name="contentDisposition">attachment;filename="download.xls"</param>
+			</result>	
+		</action>
+		
+
+		
+	
+		<!-- 实验室信息 -->
+		
+		<action name="getBarAction" class="labProAction" method="getBarData">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		
+		<action name="checkBarAction" class="labProAction" method="checkBarData">
+			<result name="success" type="redirect">
+			/labanalyze/barchart.jsp
+			</result>
+		</action>
+		
+		<action name="getAverTimeDataAction" class="labProAction" method="getAverTimeData">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="getEverRateAction" class="labProAction" method="getEverRate">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		<action name="getEveyDataAction" class="labProAction" method="getEveyData">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+		
+		
+	</package>
+	<package name="basePackage" extends="struts-default">
+	</package>
+	
+</struts>

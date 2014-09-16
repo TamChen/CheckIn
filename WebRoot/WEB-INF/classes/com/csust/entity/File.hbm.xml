@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.csust.entity">
+  <class name="com.csust.entity.File" table="file" catalog="checkin">
+    <id name="id" column="id" type="java.lang.Integer">
+      <generator class="identity">
+      </generator>
+    </id>
+    <property name="userno" column="userno" type="java.lang.Integer"></property>
+     <property name="tag" column="tag" type="java.lang.String"></property>
+    <property name="newname" column="newname" type="java.lang.String"></property>
+    <property name="oldname" column="oldname" type="java.lang.String"></property>
+    <property name="address" column="address" type="java.lang.String"></property>
+    <property name="depict" column="depict" type="java.lang.String"></property>
+    <property name="format" column="format" type="java.lang.String"></property>
+    <property name="open" column="open" type="java.lang.String"></property>
+    <property name="size" column="size" type="java.lang.Float"></property>
+   	<property name="recordtime" column="recordtime" type="java.sql.Date"></property>
+  </class>
+</hibernate-mapping>

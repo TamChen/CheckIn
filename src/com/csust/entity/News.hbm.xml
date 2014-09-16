@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.csust.entity">
+  <class name="com.csust.entity.News" table="news" catalog="checkin">
+    <id name="id" column="id" type="java.lang.Integer">
+      <generator class="identity">
+      </generator>
+    </id>
+     <property name="newsid" column="newsid" type="java.lang.Integer"></property>
+    <property name="userno" column="userno" type="java.lang.Integer"></property>
+    <property name="username" column="username" type="java.lang.String"></property>
+    <property name="star" column="star" type="java.lang.Integer"></property>
+    <property name="statu" column="statu" type="java.lang.String"></property>
+  	<property name="title" column="title" type="java.lang.String"></property>
+    <property name="comnumber" column="comnumber" type="java.lang.Integer"></property>
+ 	<property name="content" column="content" type="java.lang.String"></property>
+   	<property name="url" column="url" type="java.lang.String"></property>
+   	<property name="recordtime" column="recordtime" type="java.sql.Timestamp"></property>
+   	  </class>
+</hibernate-mapping>

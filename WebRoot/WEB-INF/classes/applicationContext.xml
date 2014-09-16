@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+   <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
+      <!-- 基本属性 url、user、password -->
+      <property name="url" value="jdbc:mysql://localhost:3306/checkin?useUnicode=true&amp;characterEncoding=UTF-8" />
+      <property name="username" value="root" />
+      <property name="password" value="123456" />
+
+      <!-- 配置初始化大小、最小、最大 -->
+      <property name="initialSize" value="1" />
+      <property name="minIdle" value="1" /> 
+      <property name="maxActive" value="20" />
+
+      <!-- 配置获取连接等待超时的时间 -->
+      <property name="maxWait" value="60000" />
+
+      <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+      <property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+      <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+      <property name="minEvictableIdleTimeMillis" value="300000" />
+
+      <property name="validationQuery" value="SELECT 'x'" />
+      <property name="testWhileIdle" value="true" />
+      <property name="testOnBorrow" value="false" />
+      <property name="testOnReturn" value="false" />
+
+      <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+      <property name="poolPreparedStatements" value="true" />
+      <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+
+      <!-- 配置监控统计拦截的filters -->
+      <property name="filters" value="stat" />
+</bean>
+ 
+	<!-- 会话配置 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="javax.persistence.validation.mode">none</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>	
+				<!-- 项目应用实体对象 -->
+				<value>com/csust/entity/User.hbm.xml</value>
+				<value>com/csust/entity/Attend.hbm.xml</value>
+				<value>com/csust/entity/Manage.hbm.xml</value>
+				<value>com/csust/entity/DayData.hbm.xml</value>
+				<value>com/csust/entity/File.hbm.xml</value>
+				<value>com/csust/entity/RnewCom.hbm.xml</value>
+				<value>com/csust/entity/News.hbm.xml</value>
+				<value>com/csust/entity/RssUser.hbm.xml</value>
+					<value>com/csust/entity/Rss.hbm.xml</value>
+				<value>com/csust/entity/Map.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 事务管理配置 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!--
+		业务类声明式事务管理配模板,需要使用事务管理业务服务对象,直接继承此Bean[即配置parent属性为此bean的id],方便统一配置
+	-->
+	<bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<!-- 指明进行事务管理业务方法名[*是通配符] -->
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="edit*">PROPAGATION_REQUIRED</prop>
+				<prop key="del*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!--  Dao模板,具体实现Dao继承此bean的配置,省去各个Dao的重复配置 -->
+	<bean id="daoTemplate" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- 用户dao -->
+	<bean id="userDAO" class="com.csust.dao.impl.UserDAOImpl" parent="daoTemplate" />
+	<bean id="chartDAO" class="com.csust.dao.impl.ChartDAOImpl" parent="daoTemplate" />
+	<bean id="dataDAO" class="com.csust.dao.impl.DataDAOImpl" parent="daoTemplate" />
+	<bean id="clientDAO" class="com.csust.dao.impl.ClientDAOImpl" parent="daoTemplate" />
+
+</beans>
+	
+

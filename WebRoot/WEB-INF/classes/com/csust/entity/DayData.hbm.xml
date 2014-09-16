@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.csust.entity">
+  <class name="com.csust.entity.DayData" table="daydata" catalog="checkin">
+    <id name="id" column="id" type="java.lang.Integer">
+      <generator class="identity">
+      </generator>
+    </id>
+    <property name="evertime" column="evertime" type="java.lang.Float"></property>
+    <property name="rate" column="rate" type="java.lang.Float"></property>
+    <property name="number" column="number" type="java.lang.Integer"></property>
+ 	<property name="recordtime" column="recordtime" type="java.sql.Date"></property>
+  	<property name="longest" column="longest" type="java.lang.String"></property> 
+  </class>
+</hibernate-mapping>

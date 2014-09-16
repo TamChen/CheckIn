@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.csust.entity">
+  <class name="com.csust.entity.User" table="user" catalog="checkin">
+    <id name="id" column="id" type="java.lang.Integer">
+      <generator class="identity">
+      </generator>
+    </id>
+    <property name="userno" column="userno" type="java.lang.Integer"></property>
+    <property name="username" column="username" type="java.lang.String"></property>
+    <property name="password" column="password" type="java.lang.String"></property>
+    <property name="ip" column="ip" type="java.lang.String"></property>
+    <property name="status" column="status" type="java.lang.String"></property>
+  	<property name="activetime" column="activetime" type="java.lang.String"></property>
+    <property name="time" column="time" type="java.lang.Integer"></property>
+    <property name="rate" column="rate" type="java.lang.Float"></property>
+   	<property name="rank" column="rank" type="java.lang.Integer"></property>
+   	<property name="imgurl" column="imgurl" type="java.lang.String"></property>
+   	<property name="mynewslist" column="mynewslist" type="java.lang.String"></property>
+   	<property name="mycollect" column="mycollect" type="java.lang.String"></property>
+   	<property name="myrsslist" column="myrsslist" type="java.lang.String"></property>
+   	  </class>
+</hibernate-mapping>
