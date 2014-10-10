@@ -14,7 +14,14 @@ public class User {
 	private String imgurl;
 	private String mynewslist;
 	private String mycollect;
+	private String myrsslist;
 
+	public String getMyrsslist() {
+		return myrsslist;
+	}
+	public void setMyrsslist(String myrsslist) {
+		this.myrsslist = myrsslist;
+	}
 	public String getMynewslist() {
 		return mynewslist;
 	}

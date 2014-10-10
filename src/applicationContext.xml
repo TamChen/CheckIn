@@ -56,7 +56,7 @@
 				<value>com/csust/entity/RnewCom.hbm.xml</value>
 				<value>com/csust/entity/News.hbm.xml</value>
 				<value>com/csust/entity/RssUser.hbm.xml</value>
-					<value>com/csust/entity/Rss.hbm.xml</value>
+				<value>com/csust/entity/Rss.hbm.xml</value>
 				<value>com/csust/entity/Map.hbm.xml</value>
 			</list>
 		</property>
