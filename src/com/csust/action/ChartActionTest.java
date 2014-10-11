@@ -3,18 +3,14 @@ package com.csust.action;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
-import org.hibernate.SessionFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.com.server.DataServer;
 
-import com.csust.dao.DataDAO;
 import com.csust.entity.Attend;
 import com.csust.entity.DayData;
 import com.csust.entity.User;

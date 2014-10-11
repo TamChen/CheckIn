@@ -7,10 +7,8 @@ import com.csust.dao.ClientDAO;
 import com.csust.dao.UserDAO;
 import com.csust.entity.News;
 import com.csust.entity.Rss;
-import com.csust.entity.RssUser;
 import com.csust.entity.User;
 import com.csust.service.ClientService;
-import com.csust.service.UserService;
 
 
 public class ClientServiceImpl implements ClientService {

@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.csust.entity.News;
 import com.csust.entity.Rss;
-import com.csust.entity.RssUser;
 
 
 public interface ClientService {

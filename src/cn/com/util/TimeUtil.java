@@ -1,20 +1,15 @@
 package cn.com.util;
 
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 import cn.com.list.FMessagelist;
 import cn.com.list.Prototypelist;
 import cn.com.list.WMessagelist;
 import cn.com.model.Message;
 import cn.com.model.Prototype;
-import cn.com.server.MainServer;
-import cn.com.thread.MainProcess;
 
 public class TimeUtil {
 	private static final byte MAX_OLDTIME = 5;

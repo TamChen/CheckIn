@@ -14,9 +14,7 @@ import javax.servlet.ServletContextListener;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import cn.com.thread.InsertDate;
 import cn.com.thread.ReceiveProcess;
-import cn.com.util.ApplicationUtil;
 
 import com.csust.entity.Attend;
 import com.csust.entity.User;

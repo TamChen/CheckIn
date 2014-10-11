@@ -1,18 +1,13 @@
 package cn.com.server;
 import java.io.IOException;
 import java.net.*;
-import java.util.Date;
 import java.util.Observable;
-import java.util.Observer;
 import java.util.Timer;
 import java.util.concurrent.*;
-
-import org.apache.taglibs.standard.lang.jstl.test.beans.PublicBean1;
 
 import cn.com.thread.InsertDate;
 import cn.com.thread.MainProcess;
 import cn.com.thread.ReceiveProcess;
-import cn.com.util.ConfigTable;
 public class MainServer extends Observable implements Runnable{
     private int port=10000;
     private ServerSocket serverSocket;

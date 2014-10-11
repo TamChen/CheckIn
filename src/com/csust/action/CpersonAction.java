@@ -1,9 +1,7 @@
 package com.csust.action;
 
-import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
@@ -11,10 +9,7 @@ import org.junit.Test;
 
 import com.csust.entity.News;
 import com.csust.entity.Rss;
-import com.csust.entity.RssUser;
-import com.csust.entity.User;
 import com.csust.service.ClientService;
-import com.csust.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CpersonAction extends ActionSupport{

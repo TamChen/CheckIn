@@ -1,20 +1,17 @@
 package cn.com.thread;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.TimerTask;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.csust.entity.Attend;
 import com.csust.entity.User;
 import com.csust.service.ChartService;
 import com.csust.service.UserService;
-import com.csust.service.impl.UserServiceImpl;
 
 import cn.com.list.Prototypelist;
 import cn.com.list.WMessagelist;

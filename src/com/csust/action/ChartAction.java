@@ -6,20 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
-import org.hibernate.Session;
 import org.junit.Test;
-import org.springframework.context.support.StaticApplicationContext;
-
-import cn.com.util.EncodeUtil;
 
 import com.csust.entity.Attend;
 import com.csust.entity.ChartData;

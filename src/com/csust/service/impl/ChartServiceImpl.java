@@ -1,8 +1,6 @@
 package com.csust.service.impl;
 
 import java.sql.Date;
-import java.sql.Timestamp;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +9,6 @@ import com.csust.dao.UserDAO;
 import com.csust.entity.Attend;
 import com.csust.entity.User;
 import com.csust.service.ChartService;
-import com.csust.service.UserService;
 
 public class ChartServiceImpl implements ChartService {
 	private ChartDAO chartDAO;

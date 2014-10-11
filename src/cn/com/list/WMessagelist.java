@@ -3,7 +3,6 @@ package cn.com.list;
 import java.util.ArrayList;
 
 import cn.com.model.Message;
-import cn.com.model.Prototype;
 
 public class WMessagelist {
 	private static ArrayList<Message> messagelist=new ArrayList<Message>();
