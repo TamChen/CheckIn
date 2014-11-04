@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="description" content="">
     <meta name="author" content="">
     <meta http-equiv="Pragma" content="no-cache">
-    <title>Lab CheckIn</title>
+    <title>CheckIn</title>
     <!-- Bootstrap core CSS -->
     <link href="style/layout/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand"  href="#">实验室签到系统</a>
+	          <a class="navbar-brand"  href="#">文件管理系统</a>
 	        </div>
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
@@ -59,16 +59,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div class="container-fluid">
 	      <div class="row">
 	        <div class="col-sm-3 col-md-2 sidebar">
-	          <ul class="nav nav-sidebar">
-	            <li class="active"><a>个人签到信息</a></li>
-	            <li><a href="personal/personal.jsp" target="show" onclick="setSession()">个人统计</a></li>
-	            <li><a href="personal/linechart.jsp" target="show">走势图</a></li>
+	         <ul class="nav nav-sidebar">
+	            <li class="active"><a>文件管理</a></li>
+	            <li><a href="personal/personal.jsp" target="show" onclick="setSession()">上传管理</a></li>
+	            <li><a href="personal/linechart.jsp" target="show">下载管理</a></li>
 	          </ul>
 	          <ul class="nav nav-sidebar">
 	            <li class="active"><a>实验室统计信息</a></li>
 	            <li><a href="labanalyze/barchart.jsp" target="show">详细信息</a></li>
 	            <li><a href="labanalyze/overview.jsp" target="show">基本情况</a></li>
 	          </ul>
+	       
 	           <ul class="nav nav-sidebar">
 	            <li class="active"><a>文件管理</a></li>
 	            <li><a href="labanalyze/barchart.jsp" target="show">代码管理</a></li>
@@ -76,8 +77,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	            <li><a href="exportreport/datatable.jsp" target="show">视频管理</a></li>
 	          </ul>
 	          <ul class="nav nav-sidebar">
-	            <li class="active"><a>成员管理</a></li>
-	            <li><a href="personmanage/manage.jsp" target="show">添加成员</a></li>
+	            <li class="active"><a>用户管理</a></li>
+	            <li><a href="personmanage/manage.jsp" target="show">用户信息管理</a></li>
+	            <li><a href="personmanage/manage.jsp" target="show">用户文件管理</a></li>
 	          </ul>
 	       
 	        </div>
