@@ -5,7 +5,12 @@ import org.junit.Test;
 import com.csust.entity.News;
 import com.csust.service.ClientService;
 import com.opensymphony.xwork2.ActionSupport;
-
+/**
+ * 
+ * @author TamChen
+ * 客户端文章
+ *
+ */
 public class CArticleAction extends ActionSupport{
 	private String newsid;
 	private ClientService clientService;

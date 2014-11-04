@@ -57,6 +57,11 @@ public class ChartAction extends ActionSupport{
 		}
 		return "success";
 	}
+	/**
+	 * 
+	 * 个人搜索数据
+	 * 
+	 */
 	public String searchData() throws IOException{
 		Random random=new Random();
 		User user=new User();
